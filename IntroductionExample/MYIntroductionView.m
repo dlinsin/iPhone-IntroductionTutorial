@@ -25,10 +25,10 @@
 
 #import "MYIntroductionView.h"
 
-#define DEFAULT_BACKGROUND_COLOR [UIColor colorWithWhite:0 alpha:0.9]
+#define DEFAULT_BACKGROUND_COLOR [UIColor colorWithWhite:0 alpha:0.85]
 #define HEADER_VIEW_HEIGHT 50
 #define PAGE_CONTROL_PADDING 2
-#define TITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Bold" size:17.0]
+#define TITLE_FONT [UIFont fontWithName:@"HelveticaNeue" size:16.0]
 #define TITLE_TEXT_COLOR [UIColor whiteColor]
 #define DESCRIPTION_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:14.0]
 #define DESCRIPTION_TEXT_COLOR [UIColor whiteColor]
@@ -357,6 +357,7 @@
     //Build Page Control
     self.PageControl = [[UIPageControl alloc] initWithFrame:CGRectMake((self.frame.size.width - 185)/2, (self.ContentScrollView.frame.origin.y + self.ContentScrollView.frame.size.height + PAGE_CONTROL_PADDING), 185, 36)];
     self.PageControl.numberOfPages = Panels.count;
+    self.PageControl.enabled = NO;
     [self addSubview:self.PageControl];
     
     //Build Skip Button
@@ -367,8 +368,9 @@
     else {
         self.SkipButton = [[UIButton alloc] initWithFrame:CGRectMake(self.frame.size.width - 80, self.PageControl.frame.origin.y, 80, self.PageControl.frame.size.height)];
     }
-    
+
     [self.SkipButton setTitle:@"Skip" forState:UIControlStateNormal];
+    [self.SkipButton.titleLabel setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:16.0]];
     [self.SkipButton addTarget:self action:@selector(skipIntroduction) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.SkipButton];
 }
