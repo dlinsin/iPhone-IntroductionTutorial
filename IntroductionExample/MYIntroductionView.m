@@ -297,7 +297,7 @@
     [panelView addSubview:panelTitleLabel];
     
     //Build description container;
-    UITextView *panelDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.ContentScrollView.frame.size.width, 10)];
+    UITextView *panelDescriptionTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, self.ContentScrollView.frame.size.width, 100)];
     panelDescriptionTextView.scrollEnabled = NO;
     panelDescriptionTextView.backgroundColor = [UIColor clearColor];
     panelDescriptionTextView.textAlignment = NSTextAlignmentCenter;
